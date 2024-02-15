@@ -1,5 +1,5 @@
 provider "google" {
-  project = "local-concord-408802"
+  project = "testing-gcp-ops"
   region  = "asia-northeast1"
   zone    = "asia-northeast1-a"
 }
