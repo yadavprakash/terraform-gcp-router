@@ -8,7 +8,7 @@ provider "google" {
 # vpc module call.
 #--------------------------------------------------------------------------------
 module "vpc" {
-  source                                    = "git::git@github.com:opsstation/terraform-gcp-vpc.git?ref=v1.0.0"
+  source                                    = "git::git@github.com:yadavprakash/terraform-gcp-vpc.git?ref=v1.0.0"
   name                                      = "dev"
   environment                               = "test"
   label_order                               = ["name", "environment"]
@@ -35,3 +35,4 @@ module "cloud_router" {
     advertised_groups = ["ALL_SUBNETS"]
   }
 }
+

@@ -20,7 +20,7 @@ To use this module, you should have Terraform installed and configured for GCP. 
 
 ```hcl
 module "cloud_router" {
-  source      = "https://github.com/opsstation/terraform-gcp-router.git"
+  source      = "https://github.com/yadavprakash/terraform-gcp-router.git"
   name        = "dev"
   environment = "test"
   network     = module.vpc.vpc_id
@@ -38,7 +38,7 @@ module "cloud_router" {
 
 ```hcl
 module "cloud_router" {
-  source                          = "https://github.com/opsstation/terraform-gcp-router.git"
+  source                          = "https://github.com/yadavprakash/terraform-gcp-router.git"
   name                            = "dev"
   environment                     = "test"
   region                          = "asia-northeast1"
@@ -58,7 +58,7 @@ module "cloud_router" {
 
 ```hcl
 module "cloud_router" {
-  source      = "https://github.com/opsstation/terraform-gcp-router.git"
+  source      = "https://github.com/yadavprakash/terraform-gcp-router.git"
   name        = "dev"
   environment = "test"
   region      = "asia-northeast1"
@@ -84,14 +84,14 @@ This example demonstrates how to create various GCP resources using the provided
 - This module currently does not provide any outputs.
 
 # Examples
-For detailed examples on how to use this module, please refer to the [example](https://github.com/opsstation/terraform-gcp-router/tree/master/_example) directory within this repository.
+For detailed examples on how to use this module, please refer to the [example](https://github.com/yadavprakash/terraform-gcp-router/tree/master/_example) directory within this repository.
 
 ## Authors
 Your Name
 Replace '[License Name]' and '[Your Name]' with the appropriate license and your information. Feel free to expand this README with additional details or usage instructions as needed for your specific use case.
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/opsstation/terraform-gcp-router/blob/master/LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/yadavprakash/terraform-gcp-router/blob/master/LICENSE) file for details.
 
 
 
@@ -113,7 +113,7 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_labels"></a> [labels](#module\_labels) | git::git@github.com:opsstation/terraform-gcp-labels.git | v1.0.0 |
+| <a name="module_labels"></a> [labels](#module\_labels) | git::git@github.com:yadavprakash/terraform-gcp-labels.git | v1.0.0 |
 
 ## Resources
 
@@ -139,7 +139,7 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 | <a name="input_enabled_interconnect_attachment"></a> [enabled\_interconnect\_attachment](#input\_enabled\_interconnect\_attachment) | n/a | `bool` | `false` | no |
 | <a name="input_environment"></a> [environment](#input\_environment) | Environment (e.g. `prod`, `dev`, `staging`). | `string` | `""` | no |
 | <a name="input_label_order"></a> [label\_order](#input\_label\_order) | Label order, e.g. sequence of application name and environment `name`,`environment`,'attribute' [`webserver`,`qa`,`devops`,`public`,] . | `list(any)` | <pre>[<br>  "name",<br>  "environment"<br>]</pre> | no |
-| <a name="input_managedby"></a> [managedby](#input\_managedby) | ManagedBy, opsstation | `string` | `""` | no |
+| <a name="input_managedby"></a> [managedby](#input\_managedby) | ManagedBy, yadavprakash | `string` | `""` | no |
 | <a name="input_mtu"></a> [mtu](#input\_mtu) | Maximum Transmission Unit (MTU), in bytes, of packets passing through this interconnect attachment. Currently, only 1440 and 1500 are allowed. If not specified, the value will default to 1440. | `string` | `1500` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name of the resource. Provided by the client when the resource is created. | `string` | `""` | no |
 | <a name="input_nats"></a> [nats](#input\_nats) | NATs to deploy on this router. | <pre>list(object({<br>    name                                = string<br>    nat_ip_allocate_option              = optional(string)<br>    source_subnetwork_ip_ranges_to_nat  = optional(string)<br>    nat_ips                             = optional(list(string), [])<br>    min_ports_per_vm                    = optional(number)<br>    max_ports_per_vm                    = optional(number)<br>    udp_idle_timeout_sec                = optional(number)<br>    icmp_idle_timeout_sec               = optional(number)<br>    tcp_established_idle_timeout_sec    = optional(number)<br>    tcp_transitory_idle_timeout_sec     = optional(number)<br>    tcp_time_wait_timeout_sec           = optional(number)<br>    enable_endpoint_independent_mapping = optional(bool)<br>    enable_dynamic_port_allocation      = optional(bool)<br><br>    log_config = optional(object({<br>      enable = optional(bool, true)<br>      filter = optional(string, "ALL")<br>    }), {})<br><br>    subnetworks = optional(list(object({<br>      name                     = string<br>      source_ip_ranges_to_nat  = list(string)<br>      secondary_ip_range_names = optional(list(string))<br>    })), [])<br><br>  }))</pre> | `[]` | no |
@@ -147,7 +147,7 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 | <a name="input_peer_asn"></a> [peer\_asn](#input\_peer\_asn) | n/a | `number` | `65513` | no |
 | <a name="input_peers"></a> [peers](#input\_peers) | BGP peers for this interface. | <pre>list(object({<br>    name                      = string<br>    peer_ip_address           = string<br>    peer_asn                  = string<br>    advertised_route_priority = optional(number)<br>    bfd = object({<br>      session_initialization_mode = string<br>      min_transmit_interval       = optional(number)<br>      min_receive_interval        = optional(number)<br>      multiplier                  = optional(number)<br>    })<br>  }))</pre> | `[]` | no |
 | <a name="input_region"></a> [region](#input\_region) | Region where the router resides | `string` | n/a | yes |
-| <a name="input_repository"></a> [repository](#input\_repository) | Terraform current module repo | `string` | `"https://github.com/opsstation/terraform-gcp-router"` | no |
+| <a name="input_repository"></a> [repository](#input\_repository) | Terraform current module repo | `string` | `"https://github.com/yadavprakash/terraform-gcp-router"` | no |
 | <a name="input_type"></a> [type](#input\_type) | The type of InterconnectAttachment you wish to create | `string` | `"PARTNER"` | no |
 | <a name="input_vlan_tag8021q"></a> [vlan\_tag8021q](#input\_vlan\_tag8021q) | The IEEE 802.1Q VLAN tag for this attachment, in the range 2-4094. | `string` | `null` | no |
 | <a name="input_vpn_tunnel"></a> [vpn\_tunnel](#input\_vpn\_tunnel) | The name or resource link to the VPN tunnel this interface will be linked to | `string` | `null` | no |
